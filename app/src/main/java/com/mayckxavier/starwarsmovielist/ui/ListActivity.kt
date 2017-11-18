@@ -1,8 +1,7 @@
 package com.mayckxavier.starwarsmovielist.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.support.v7.app.AppCompatActivity
 import android.widget.ListView
 import com.mayckxavier.starwarsmovielist.R
 import kotlinx.android.synthetic.main.list_activity.*
@@ -17,12 +16,11 @@ class ListActivity : AppCompatActivity() {
         setContentView(R.layout.list_activity)
 
         movieList = movie_list
-
         listPresenter = ListPresenter(this)
         listPresenter.loadMovies()
     }
 
-    fun updateList(arrayAdapter: ArrayAdapter<String>) {
+    fun updateList(arrayAdapter: FilmListAdapter) {
         movieList.adapter = arrayAdapter
     }
 }
