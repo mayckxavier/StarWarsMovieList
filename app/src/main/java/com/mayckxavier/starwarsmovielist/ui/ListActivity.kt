@@ -3,6 +3,7 @@ package com.mayckxavier.starwarsmovielist.ui
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
 import com.mayckxavier.starwarsmovielist.R
 import kotlinx.android.synthetic.main.list_activity.*
@@ -28,6 +29,11 @@ class ListActivity : AppCompatActivity() {
 
         swiperefresh.setOnRefreshListener {
             listPresenter.loadMovies()
+        }
+
+        movieList.setOnItemClickListener{
+            adapterView: AdapterView<*>, view1: View, position: Int, l: Long ->
+            listPresenter.goToSelectedFilm(position)
         }
     }
 

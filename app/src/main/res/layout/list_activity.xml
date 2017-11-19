@@ -6,7 +6,6 @@
     android:orientation="vertical">
 
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/progressbar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="fill_parent"
@@ -15,7 +14,8 @@
         android:backgroundTint="@color/colorPrimary"
         android:indeterminate="true"
         android:indeterminateTint="@color/colorAccent"
-        android:max="100" />
+        android:max="100"
+        android:visibility="gone" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
