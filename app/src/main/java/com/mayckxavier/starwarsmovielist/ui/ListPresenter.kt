@@ -17,6 +17,7 @@ class ListPresenter(val listActivity: ListActivity) {
 
     fun loadMovies() {
         listActivity.showProgressBar()
+        listActivity.cleanFilmList()
 
         val call = RetrofitInitializer().filmService().list()
         call.enqueue(object : Callback<Films> {
@@ -30,7 +31,7 @@ class ListPresenter(val listActivity: ListActivity) {
                     val films: Films = it
 
                     val arrayAdapter = FilmListAdapter(films.results, listActivity)
-                    listActivity.updateList(arrayAdapter)
+                    listActivity.updateFilmList(arrayAdapter)
                     listActivity.dismissProgressBar()
                 }
             }
