@@ -11,7 +11,7 @@ class Film(val title: String,
            val director: String,
            val producer: String,
            val release_date: String,
-           val url: String): Serializable {
+           val url: String) : Serializable {
 
     override fun toString(): String {
         return title

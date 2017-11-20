@@ -15,7 +15,7 @@ class ListActivity : AppCompatActivity() {
 
     private lateinit var movieList: ListView
     private lateinit var listPresenter: ListPresenter
-    private lateinit var progressDialog:ProgressDialog
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

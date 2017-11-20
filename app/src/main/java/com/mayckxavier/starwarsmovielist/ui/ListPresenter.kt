@@ -61,8 +61,8 @@ class ListPresenter(val listActivity: ListActivity) {
                 response?.body()?.let {
                     val film = it
 
-                    val intent: Intent = Intent(listActivity,FilmDetailsActivity::class.java)
-                    intent.putExtra("film",film as Serializable)
+                    val intent: Intent = Intent(listActivity, FilmDetailsActivity::class.java)
+                    intent.putExtra("film", film as Serializable)
 
                     listActivity.startActivity(intent)
                     Log.e("onResponse", it.director)
