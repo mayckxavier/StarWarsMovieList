@@ -57,7 +57,9 @@ class ListActivity : AppCompatActivity() {
         if (progressDialog.isShowing) {
             progressDialog.dismiss()
         }
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        if (msg.isNotBlank()) {
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun showProgressBar() {
