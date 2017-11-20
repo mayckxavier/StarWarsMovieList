@@ -11,7 +11,8 @@
         android:id="@+id/film_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:padding="16dp"
+        android:textSize="18sp"
         tools:text="Film Title" />
 
 </LinearLayout>
