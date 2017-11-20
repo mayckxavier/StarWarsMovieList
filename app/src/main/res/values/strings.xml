@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">StarWarsMovieList</string>
+    <string name="film_description">Film Description</string>
+    <string name="release_date">Release date</string>
+    <string name="film_title">Film Title</string>
 </resources>
