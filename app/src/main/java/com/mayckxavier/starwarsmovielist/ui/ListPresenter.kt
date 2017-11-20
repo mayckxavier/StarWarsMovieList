@@ -1,6 +1,5 @@
 package com.mayckxavier.starwarsmovielist.ui
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.util.Log
 import com.mayckxavier.starwarsmovielist.R
@@ -71,12 +70,5 @@ class ListPresenter(val listActivity: ListActivity) {
                 listActivity.dismissProgressBar()
             }
         })
-
-
-
-
     }
-
-
-
 }
