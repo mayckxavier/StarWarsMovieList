@@ -1,6 +1,6 @@
 package com.mayckxavier.starwarsmovielist.ui
 
-import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.util.Log
 import com.mayckxavier.starwarsmovielist.R
@@ -10,6 +10,7 @@ import com.mayckxavier.starwarsmovielist.data.Films
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 
 /**
  * Created by mayck on 17/11/17.
@@ -45,9 +46,35 @@ class ListPresenter(val listActivity: ListActivity) {
     }
 
     fun goToSelectedFilm(position: Int) {
+        listActivity.showProgressDialog("Loading film")
+
         val film: Film = filmArrayAdapter.getItem(position)
-        Log.e("onItemClick", film.title)
-        listActivity.startActivity(Intent(listActivity,FilmDetailsActivity::class.java))
+
+        val call = RetrofitInitializer().filmService().search(film.filmId())
+
+        call.enqueue(object : Callback<Film> {
+            override fun onFailure(call: Call<Film>?, t: Throwable?) {
+                Log.e("erro onFailure", t?.message)
+                listActivity.dismissProgressDialog()
+            }
+
+            override fun onResponse(call: Call<Film>?, response: Response<Film>?) {
+                response?.body()?.let {
+                    val film = it
+
+                    val intent: Intent = Intent(listActivity,FilmDetailsActivity::class.java)
+                    intent.putExtra("film",film as Serializable)
+
+                    listActivity.startActivity(intent)
+                    Log.e("onResponse", it.director)
+                }
+                listActivity.dismissProgressBar()
+            }
+        })
+
+
+
+
     }
 
 
