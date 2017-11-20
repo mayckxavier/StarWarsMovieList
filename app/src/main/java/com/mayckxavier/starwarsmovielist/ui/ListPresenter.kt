@@ -61,13 +61,14 @@ class ListPresenter(val listActivity: ListActivity) {
                 response?.body()?.let {
                     val film = it
 
-                    val intent: Intent = Intent(listActivity, FilmDetailsActivity::class.java)
+                    val intent = Intent(listActivity, FilmDetailsActivity::class.java)
                     intent.putExtra("film", film as Serializable)
 
+                    listActivity.dismissProgressDialog()
                     listActivity.startActivity(intent)
                     Log.e("onResponse", it.director)
                 }
-                listActivity.dismissProgressBar()
+
             }
         })
     }
