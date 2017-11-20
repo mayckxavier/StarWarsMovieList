@@ -6,6 +6,7 @@ import com.mayckxavier.starwarsmovielist.R
 import com.mayckxavier.starwarsmovielist.RetrofitInitializer
 import com.mayckxavier.starwarsmovielist.data.Film
 import com.mayckxavier.starwarsmovielist.data.Films
+import com.mayckxavier.starwarsmovielist.ui.adapter.FilmListAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

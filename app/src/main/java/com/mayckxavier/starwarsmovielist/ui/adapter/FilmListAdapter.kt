@@ -1,4 +1,4 @@
-package com.mayckxavier.starwarsmovielist.ui
+package com.mayckxavier.starwarsmovielist.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

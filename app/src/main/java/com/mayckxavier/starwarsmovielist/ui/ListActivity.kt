@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import com.mayckxavier.starwarsmovielist.R
+import com.mayckxavier.starwarsmovielist.ui.adapter.FilmListAdapter
 import kotlinx.android.synthetic.main.list_activity.*
 
 
