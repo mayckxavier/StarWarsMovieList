@@ -29,7 +29,7 @@ class ListPresenter(val listActivity: ListActivity) {
         call.enqueue(object : Callback<Films> {
             override fun onFailure(call: Call<Films>?, t: Throwable?) {
                 Log.e("erro onFailure", t?.message)
-                listActivity.dismissProgressBar()
+                listActivity.dismissProgressBar("Web couldn't get the film list. Is your internet connection working?")
             }
 
             override fun onResponse(call: Call<Films>?, response: Response<Films>?) {
@@ -54,7 +54,7 @@ class ListPresenter(val listActivity: ListActivity) {
         call.enqueue(object : Callback<Film> {
             override fun onFailure(call: Call<Film>?, t: Throwable?) {
                 Log.e("erro onFailure", t?.message)
-                listActivity.dismissProgressDialog()
+                listActivity.dismissProgressDialog("Web couldn't get the film list. Is your internet connection working?")
             }
 
             override fun onResponse(call: Call<Film>?, response: Response<Film>?) {

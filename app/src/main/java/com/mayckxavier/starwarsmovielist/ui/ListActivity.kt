@@ -58,7 +58,7 @@ class ListActivity : AppCompatActivity() {
             progressDialog.dismiss()
         }
         if (msg.isNotBlank()) {
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -67,8 +67,12 @@ class ListActivity : AppCompatActivity() {
         progressbar.visibility = View.VISIBLE
     }
 
-    fun dismissProgressBar() {
+    fun dismissProgressBar(msg: String = "") {
         swiperefresh.isRefreshing = false
         progressbar.visibility = View.GONE
+
+        if (msg.isNotBlank()) {
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+        }
     }
 }
